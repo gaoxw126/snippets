@@ -2,13 +2,11 @@
 # -*- coding: utf-8 -*-
 
 """
-
+An utility to replace include guard in c++ header with pragma once
 """
 
 import re
 import os
-
-# from unipath import Path
 
 cpp_header_pattern = re.compile("^[\w]+\.h$")
 hidden_dir_pattern = re.compile("^\.[\w]+$")
@@ -58,14 +56,14 @@ comment2_end_pattern = re.compile("^.*\*\/$")
 # #define INCLUDE_GUARD
 #
 # To avoid deleting irrelevant macros incorrectly, the function will
-# find the last endif statement, and checks if it is followed by a comments
+# find the last #endif statement, and checks if it is followed by a comment
 # in the form of
 # #endif // INCLUDE_GUARD
 # If not, it will do nothing on this file.
 #
-# By default, use_pragma_once_internal allows any format of macro to represents an
-# include guard. To customize the format of include guard, make changes to
-# include_guard_pattern.
+# By default, use_pragma_once_internal allows any formats of a macro to
+# represents an include guard. To customize the format of include guard,
+# make changes to include_guard_pattern.
 #
 def use_pragma_once_internal(cpp):
     newcpp = ""
@@ -92,6 +90,7 @@ def use_pragma_once_internal(cpp):
             continue
         break
 
+    include_guard = ""
     m1 = ifndef_pattern.match(lines[i])
     if m1:
         include_guard = m1.group(1)
@@ -103,7 +102,8 @@ def use_pragma_once_internal(cpp):
     # find the last endif
     for i in range(i, len(lines)):
         line = lines[i]
-        if endif_pattern.match(line):
+        m3 = endif_pattern.match(line)
+        if m3 and m3.group(1) == include_guard:
             break
         newcpp += line
 

@@ -17,4 +17,8 @@ class Module {
 
 };
 
+#ifdef FUCK
+#define FUCK
+#endif //FUCK
+
 #endif //PROJECT_MODULE_H

@@ -10,9 +10,15 @@
  *
  */
 
-#pragma once
+#ifndef PROJECT_MODULE_H
+#define PROJECT_MODULE_H
 
 class Module {
 
 };
 
+#ifdef FUCK
+#define FUCK
+#endif //FUCK
+
+#endif //PROJECT_MODULE_H
