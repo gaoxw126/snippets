@@ -1,0 +1,20 @@
+//
+// Created by neverchanje on 1/19/16.
+//
+/**
+ *
+ *
+ */
+/* abcdefghijklmnop )*&&_ /*- + ~` */
+/*
+ *
+ */
+
+#ifndef PROJECT_MODULE_H
+#define PROJECT_MODULE_H
+
+class Module {
+
+};
+
+#endif //PROJECT_MODULE_H
