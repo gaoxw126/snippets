@@ -1,0 +1,76 @@
+Bundle 'flazz/vim-colorschemes'
+Bundle 'nsf/gocode', {'rtp': 'vim/'}
+
+
+" C/C++ {{{
+Bundle 'Rip-Rip/clang_complete'
+Bundle 'octol/vim-cpp-enhanced-highlight'
+Bundle 'vim-scripts/Cpp11-Syntax-Support'
+Bundle 'jeaye/color_coded'
+Bundle 'justinmk/vim-syntax-extra'
+Bundle 'vim-scripts/a.vim'
+Bundle 'kana/vim-operator-user'
+Bundle 'Shougo/vimproc.vim'
+Bundle 'rhysd/vim-clang-format'
+
+" clang_complete { :h clang_complete.txt
+    let g:clang_auto_select = 0 " 0/1/2 auto select first entry in popup menu
+    " disable with 0 to solve neocomplcache problem
+    let g:clang_complete_auto = 0 " auto complete after -> . ::
+    let g:clang_snippets = 1
+    let g:clang_close_preview = 1
+
+    " ---------- For C only -----------------
+    " let g:clang_user_options =
+    "             \ '-std=gnu99' .
+    "             \ '-stdlib=libc' .
+    "             \ '-I /usr/include'
+
+    " ---------- For C++ Development -------------------
+    let g:clang_user_options = '-std=c++11 -stdlib=libc++ -IIncludePath'
+
+    let g:clang_sort_algo = "priority"
+    let g:clang_complete_macros = 1
+    let g:clang_complete_patterns = 1
+" }
+
+let s:clang_library_path = '/usr/local/llvm/lib/libclang.dylib'
+let g:cpp_class_scope_highlight = 1 "vim-cpp-enhanced-highlight
+let g:clang_library_path = s:clang_library_path "clang_complete
+
+" clang-format { :h clang-format.txt
+    let g:clang_format#auto_format = 1
+    let g:clang_format#command = "/usr/local/llvm/bin/clang-format"
+" }
+
+" }}}
+
+" Python {{{
+"
+" }}}
+
+
+Bundle 'aperezdc/vim-template'
+
+" google codefmt {{{
+"" Add maktaba and codefmt to the runtimepath.
+" (The latter must be installed before it can be used.)
+Plugin 'google/vim-maktaba'
+Plugin 'google/vim-codefmt'
+" " Also add Glaive, which is used to configure codefmt's maktaba flags. See
+" " `:help :Glaive` for usage.
+Plugin 'google/vim-glaive'
+" call glaive#Install()
+" " Optional: Enable codefmt's default mappings on the <Leader>= prefix.
+" Glaive codefmt plugin[mappings]"
+" }}}
+
+let g:airline_powerline_fonts=1
+
+
+
+" Conque is a Vim plugin which allows you to run interactive programs, such as
+" bash on linux or powershell.exe on Windows, inside a Vim buffer. In other words
+" it is a terminal emulator which uses a Vim buffer to display the program output.
+Bundle 'vim-scripts/Conque-Shell'
+
