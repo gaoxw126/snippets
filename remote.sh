@@ -4,7 +4,7 @@
 curl http://172.22.0.16:8082/install_repo.bash | bash
 
 sudo apt update
-sudo apt install zsh git golang build-essential cmake libboost-all-dev gem ruby-dev lua5.2, liblua5.2
+sudo apt install zsh git golang build-essential cmake libboost-all-dev gem ruby-dev lua5.2 liblua5.2
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # 安装 fio
