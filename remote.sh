@@ -109,3 +109,10 @@ cd ~/.vim/plugged/color_coded
 mkdir build && cd build
 cmake ..
 make && make install
+
+# 安装 nodejs, nvm 
+wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash
+source ~/.zshrc
+nvm install stable
+npm install -g hexo-cli
+
