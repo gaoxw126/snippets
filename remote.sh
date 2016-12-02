@@ -1,9 +1,5 @@
 #!/bin/sh
 
-# 更新源
-curl http://172.22.0.16:8082/install_repo.bash | bash
-
-sudo apt update
 sudo apt install zsh git golang build-essential cmake libboost-all-dev gem ruby-dev lua5.2 liblua5.2 automake
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
@@ -37,11 +33,6 @@ sudo update-alternatives --install /usr/bin/editor editor /usr/bin/vim 1
 sudo update-alternatives --set editor /usr/bin/vim
 sudo update-alternatives --install /usr/bin/vi vi /usr/bin/vim 1
 sudo update-alternatives --set vi /usr/bin/vim
-
-# 这个现成 ppa 可以支持 vim with python
-# sudo apt-add-repository ppa:pi-rho/dev
-# sudo apt-get update
-# sudo apt-get install vim
 
 # 安装 tidb 必要依赖
 git clone https://github.com/pingcap/docs.git tidb-docs
